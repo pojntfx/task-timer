@@ -4,7 +4,7 @@ RUN mkdir -p /app
 WORKDIR /app
 RUN apt update
 # For deasync@0.1.14
-RUN apt install -y python
+RUN apt install -y python build-essential
 
 # Setup app
 COPY package.json .
