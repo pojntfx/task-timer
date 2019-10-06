@@ -1,3 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task-timer-dev-cache
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 128Mi
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,6 +28,14 @@ spec:
           image: registry.gitlab.com/pojntfx/pojntfx/task-timer-dev
           ports:
             - containerPort: 1234
+            - containerPort: 1235
+          volumeMounts:
+            - name: task-timer-dev-cache
+              mountPath: /app/.cache
+      volumes:
+        - name: task-timer-dev-cache
+          persistentVolumeClaim:
+            claimName: task-timer-dev-cache
 
 ---
 apiVersion: v1
@@ -28,4 +48,7 @@ spec:
   ports:
     - port: 1234
       targetPort: 1234
-      name: frontend
+      name: http
+    - port: 1235
+      targetPort: 1235
+      name: ws
