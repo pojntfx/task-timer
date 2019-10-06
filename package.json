@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "parcel src/pages/index.html",
-    "build": "parcel build src/pages/index.html -d assets-dist && chmod +x src/cmd/* && pkg . -t node10-linux-x64 --output dist/task-timer",
+    "build": "parcel build src/pages/index.html -d assets-dist && chmod +x src/cmd/* && pkg . -t node10-linux-x64 --output dist/app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
