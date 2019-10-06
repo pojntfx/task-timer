@@ -1,0 +1,5 @@
+image: registry.gitlab.com/pojntfx/pojntfx/task-timer:latest
+memory: "128Mi"
+cpu: "500m"
+domain: task-timer.felix.pojtinger.space
+dev: false
