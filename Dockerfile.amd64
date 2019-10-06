@@ -13,6 +13,8 @@ COPY src src
 
 # Compile app
 RUN npm run build
+RUN chmod +x src/cmd/*
+RUN ./node_modules/.bin/pkg . -t node10-linux-x64 --output dist/app-amd64
 
 # Setup env
 FROM amd64/debian:10-slim
