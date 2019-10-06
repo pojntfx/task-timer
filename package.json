@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "parcel src/pages/index.html",
-    "build": "parcel build src/pages/index.html -d assets-dist && chmod +x src/cmd/* && pkg . -t node10-linux-x64 --output dist/app",
+    "build": "parcel build src/pages/index.html -d assets-dist && chmod +x src/cmd/* && pkg . -t node10-linux-x64 --output dist/app-amd64 && wget https://github.com/robertsLando/pkg-binaries/blob/master/arm64/fetched-v10.15.3-linux-arm64?raw=true -O ~/.pkg-cache/v2.6/fetched-v10.15.3-linux-arm64 && pkg . -t node10-linux-arm64 --output dist/app-arm64",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {

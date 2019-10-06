@@ -1,5 +1,5 @@
 # Setup env
-FROM node:10-buster-slim AS build
+FROM amd64/node:10-buster-slim AS build
 RUN mkdir -p /app
 WORKDIR /app
 
@@ -15,10 +15,10 @@ COPY src src
 RUN npm run build
 
 # Setup env
-FROM debian:10-slim
+FROM amd64/debian:10-slim
 
 # Add app
-COPY --from=build /app/dist/app app
+COPY --from=build /app/dist/app-amd64 app
 
 # Run app
 CMD ["./app"]
