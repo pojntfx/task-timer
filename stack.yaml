@@ -30,7 +30,7 @@ spec:
   selector:
     app: task-timer
   ports:
-    - name: frontend
+    - name: http
       port: 80
       targetPort: 8080
 
@@ -47,4 +47,4 @@ spec:
           - path: /
             backend:
               serviceName: task-timer
-              servicePort: frontend
+              servicePort: http

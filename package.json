@@ -4,7 +4,7 @@
   "description": "A simple app to calculate the amount of time tasks will take",
   "main": "src/index.js",
   "scripts": {
-    "dev": "parcel src/pages/index.html",
+    "dev": "parcel src/pages/index.html --hmr-port 1235",
     "build": "parcel build src/pages/index.html -d assets-dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,7 +27,7 @@
     "semantic-ui-react": "^0.88.1"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.3",
+    "parcel-bundler": "^1.12.4",
     "pkg": "^4.4.0"
   }
 }
