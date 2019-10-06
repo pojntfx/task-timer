@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-timer-dev
+spec:
+  selector:
+    matchLabels:
+      app: task-timer-dev
+  template:
+    metadata:
+      labels:
+        app: task-timer-dev
+    spec:
+      containers:
+        - name: task-timer-dev
+          image: registry.gitlab.com/pojntfx/pojntfx/task-timer-dev
+          ports:
+            - containerPort: 1234
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: task-timer-dev
+spec:
+  selector:
+    app: task-timer-dev
+  ports:
+    - port: 1234
+      targetPort: 1234
+      name: frontend
