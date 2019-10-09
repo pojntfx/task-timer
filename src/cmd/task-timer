@@ -13,9 +13,9 @@ const {
 const start = async port => {
   const app = express();
 
-  app.use(express.static(path.resolve(`${__dirname}/../../assets-dist`)));
+  app.use(express.static(path.resolve(`${__dirname}/../../public`)));
   app.get("/*", function(_, res) {
-    res.sendFile(path.resolve(`${__dirname}/../../assets-dist/index.html`));
+    res.sendFile(path.resolve(`${__dirname}/../../public/index.html`));
   });
 
   return app.listen(port);

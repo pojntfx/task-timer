@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "parcel src/pages/index.html --hmr-port 1235",
-    "build": "parcel build src/pages/index.html -d assets-dist",
+    "build": "parcel build src/pages/index.html -d public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
@@ -14,7 +14,7 @@
   "pkg": {
     "scripts": "src/cmd/task-timer",
     "assets": [
-      "assets-dist/**/*"
+      "public/**/*"
     ]
   },
   "author": "Felix Pojtinger <felix@pojtinger.com>",
