@@ -17,8 +17,8 @@ const Header = props => (
     </HeaderTemplate.Content>
     <HeaderTemplate.Subheader>
       Contribute on{" "}
-      <a href="https://gitlab.com/pojntfx/pojntfx/">
-        <Icon name="gitlab" fitted /> GitLab
+      <a href="https://github.com/pojntfx/task-timer">
+        <Icon name="github" fitted /> GitHub
       </a>
       !
     </HeaderTemplate.Subheader>
